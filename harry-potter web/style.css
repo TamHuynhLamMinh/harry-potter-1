@@ -1,0 +1,136 @@
+/* DEFAULT */
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    font-family: "Amiri";
+}
+
+a {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+body{
+    background-color: black;
+}
+
+/* BEFORE_NAV */
+.before_nav{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.before_nav a {
+    color: #fadea8;
+    font-size: 95%;
+    padding: 5px 15px;
+}
+
+.wblogo:hover{
+    background-color: #09f;
+}
+
+/* HOME > NAV_BAR */
+.nav_bar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 3;
+}
+
+.nav_bar a {
+    color: #f4c651;
+    font-weight: 700;
+    font-size: 140%;
+    padding: 20px 35px 0px 35px;
+}
+
+/* HOME > INSIDE: 
+    position: alsolute; is used when wanting to overlay layers in a same position.
+
+    position: relative; is used when wanting 1 thing stood before or after others.
+*/
+
+video{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.overlay {
+    /* 
+    Purpose: create gradident in the video
+    */
+    background-image: linear-gradient(
+        to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    width: 100%;
+    aspect-ratio: 2;
+    z-index: 0;
+}
+
+.bg-e {
+    /* 
+    Purpose: set all 3 layers of bg (video, img, overlay - linear) to the fixed position.
+    */
+    position: absolute;
+    top: 0;
+}
+
+.inside {
+    /* 
+    aspect-ratio: scale width and height (width 2 height 1)
+    */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -3;
+}
+
+.inside-img {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 2;
+    z-index: 1;
+}
+
+header{
+    position: relative;
+}
+
+/* MAIN_CONTENT
+.main_content{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+}
+
+.bg_mc{
+    width: 100%;
+    position: relative;
+    z-index: -3;
+} */
+
+.logo_h {
+    display: flex;
+    justify-content: center;
+}
+
+.main-con{
+    display: flex;
+    object-fit: cover;
+}
+
+.main-con img {
+    width: 100%;
+    object-fit: contain;
+    z-index: 1;
+}
